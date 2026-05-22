@@ -1,0 +1,36 @@
+# Gradle / build
+.gradle/
+**/build/
+gradle/gradle-daemon-jvm.properties
+
+# Local config
+local.properties
+secrets.properties
+*.env
+*.env.*
+
+# Android Studio / IntelliJ
+/.idea/
+*.iml
+/captures/
+
+# Android specific
+.externalNativeBuild/
+.cxx/
+app/*.keystore
+*.keystore
+*.jks
+
+# Kotlin/Java
+*.class
+*.log
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+*.pdf
+
