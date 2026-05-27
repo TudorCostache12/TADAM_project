@@ -1,12 +1,47 @@
-# Currency Exchange App (TADAM)
+TADAM — Currency Exchange App
+----------------------------------------
+Purpose
+Show live currency rates and convert amounts.
 
-Minimal Android app scaffold demonstrating:
-- Kotlin + Jetpack Compose
-- Jetpack Navigation
-- MVVM + Repository
-- Retrofit integration with Frankfurter API
+Stack
+- Kotlin
+- Jetpack Compose
+- MVVM
+- Retrofit + Coroutines
 
-Open the project in Android Studio (use Gradle sync). Main module: `app`.
+Arch
+UI → ViewModel → Repository → API
 
-Notes:
-- This is a minimal educational scaffold. For production use add proper DI, error handling and tests.
+Relevant files:
+- `MainActivity.kt` — entry point
+- `TadamApp.kt` — navigation
+- `RatesScreen.kt` — list rates
+- `ConverterScreen.kt` — convert UI
+- `CurrencyViewModel.kt` — state & logic
+- `CurrencyRepository.kt` / `CurrencyApiService.kt` — network
+
+flowchart TB
+
+    MA[MainActivity]
+
+    NAV[NavHost]
+
+    RS[RatesScreen]
+    CS[ConverterScreen]
+
+    VM[ViewModel]
+    REPO[Repository]
+    API[Retrofit API]
+
+    %% Navigation
+    MA --> NAV
+    NAV --> RS
+    NAV --> CS
+
+    %% Screens -> ViewModel
+    RS --> VM
+    CS --> VM
+
+    %% Data flow
+    VM --> REPO
+    REPO --> API
