@@ -20,8 +20,8 @@ Relevant files:
 - `CurrencyViewModel.kt` — state & logic
 - `CurrencyRepository.kt` / `CurrencyApiService.kt` — network
 
+```mermaid
 flowchart TB
-
     MA[MainActivity]
 
     NAV[NavHost]
@@ -45,3 +45,4 @@ flowchart TB
     %% Data flow
     VM --> REPO
     REPO --> API
+```
